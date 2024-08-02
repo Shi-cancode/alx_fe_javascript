@@ -100,6 +100,10 @@ function importFromJsonFile(event) {
 <select id="categoryFilter" onchange="filterQuotes()">
     <option value="all">All Categories</option>
     <!-- Dynamically populated categories -->
+        function manualSync() {
+    fetchQuotesFromServer();
+    showNotification('Sync initiated.');
+}
 </select>
 
     </div>
