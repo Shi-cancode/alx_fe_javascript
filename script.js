@@ -72,14 +72,36 @@ function importFromJsonFile(event) {
             alert('Failed to import quotes.');
         }
     };
-    fileReader.readAsText(event.target.files[0]);
-}
+    fileReader.readAsText(event.target.files[0]);<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #quoteDisplay {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Quote Generator</h1>
+    <div id="quoteDisplay">Your quote will appear here.</div>
+    <button id="newQuote">Show New Quote</button>
 
-document.getElementById('newQuote').addEventListener('click', showRandomQuote);
-document.getElementById('addQuote').addEventListener('click', addQuote);
-document.getElementById('exportQuotes').addEventListener('click', exportToJsonFile);
-document.getElementById('importFile').addEventListener('change', importFromJsonFile);
+    <div>
+        <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+        <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+        <button id="addQuote">Add Quote</button>
+<select id="categoryFilter" onchange="filterQuotes()">
+    <option value="all">All Categories</option>
+    <!-- Dynamically populated categories -->
+</select>
 
-// Load quotes on page load
-loadQuotes();
+    </div>
 
+    
